@@ -1,0 +1,57 @@
+<%- include('../partials/head') %>
+<%- include('../partials/usernavbar') %>
+<div class="container m-t m-b">
+  <h4 class="text-dark"><a style="color:black" href="/user/<%= user._id %>"><%= user.username %></a> Dashboard</h4>
+ <form method="POST" enctype="multipart/form-data" action="/add/photo/<%= user.id %>">   
+  <div class="card m-t">
+    <div class="card-body">
+      <label>Başlık</label>
+      <input type="text" id="title" name="title" class="form-control">
+      <label>Açıklama</label>
+      <input type="text" id="description" name="description" class="form-control">
+      <label>Fotoğraf</label>
+       <input class="form-control" type="file" class="form-control-file" name="uploaded_file"><br> 
+    </div>
+    <div class="card-footer">
+    <button type="submit" class="btn btn-dark">Ekle</button>
+    </div>
+  </div>
+</form>
+<h4>Fotoğraflar</h4>
+  <% if(photocount < 1){ %>
+<div class="hata text-secondary">
+<i class="fal fa-frown"></i>
+<label>Sonuç Bulunamadı</label>
+</div>  
+<% } else { %>
+<div class="row">
+<% photos.forEach( photos => { %>
+<div class="col-md-3">
+<div class="card m-t">
+<div class="card-img-top text-center" style="padding-top:2vh;">
+<img src="/uploads/<%= photos.photo %>" style="border-radius:5px;">
+</div>
+<div class="card-body">
+<h5><%= photos.title %></h5>
+<label><%= photos.description %></label>
+</div>
+<div class="card-footer">
+ <div class="row">
+  <form class="col-6" method="POST" action="/remove/photo/<%= photos._id %>" >
+    <button class="col-12 btn btn-danger" type="submit">
+     Sil 
+    </button>  
+  </form>
+  <form class="col-6">
+    <button class="col-12 btn btn-dark" type="submit">
+     Düzenle
+    </button>  
+  </form>
+ </div>
+</div>
+</div>
+</div>
+<% }) %>
+</div>
+<% } %>
+</div>
