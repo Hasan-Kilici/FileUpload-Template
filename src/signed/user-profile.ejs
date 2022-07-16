@@ -1,0 +1,34 @@
+<%- include('../partials/head') %>
+<%- include('../partials/usernavbar') %>
+<div class="container m-t">
+<h4>Fotoğraflar</h4>
+<% if(photocount < 1){ %>
+<div class="hata text-secondary">
+<i class="fal fa-frown"></i>
+<label>Sonuç Bulunamadı</label>
+</div>  
+<% } else { %>
+<div class="row">
+<% photos.forEach( photos => { %>
+<div class="col-md-3">
+<div class="card m-t">
+<div class="card-img-top text-center" style="padding-top:2vh;">
+<img src="/uploads/<%= photos.photo %>" style="border-radius:5px;">
+</div>
+<div class="card-body">
+<h5><%= photos.title %></h5>
+<label><%= photos.description %></label>
+</div>
+<div class="card-footer">
+ <div class="row">
+   <a href="/photo/<%= photos._id%>" style="text-decoration:none"><button class="text-light col-md-6 btn btn-dark">
+     Görüntüle
+    </button></a>
+ </div>
+</div>
+</div>
+</div>
+<% }) %>
+</div>
+<% } %>
+</div>
