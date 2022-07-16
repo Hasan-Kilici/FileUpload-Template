@@ -1,0 +1,16 @@
+<head>
+<title><%= photos.title %></title>
+<meta property="og:title" content="<%= photos.title %>">
+<meta property="og:description" content="<%= photos.description %>">
+<meta name="twitter:image" content="/uploads/<%= photos.photo %>">
+<link rel="image_src" href="/uploads/<%= photos.photo %>" />
+<meta content="#ddeeee" data-react-helmet="true" name="theme-color" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image:width" content="400" />
+<meta content="summary_large_image" name="twitter:card">
+<meta property="og:url" content="/photo/<%= photos._id %>" />
+<link property="og:image" href="/uploads/<%= photos.photo %>" />
+</head>
+<body style="background-color:black;display:flex;justify-content:center;">
+<img src="/uploads/<%= photos.photo %>" style="border-radius:5px;">
+</body>
