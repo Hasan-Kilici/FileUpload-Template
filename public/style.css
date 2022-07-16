@@ -1,0 +1,21 @@
+.body{background:#eeeeee}
+.m-t{margin-top:2vh;}
+.m-b{margin-bottom:2vh;}
+.hata{
+width:100%;
+height:35vh;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+}
+.hata i{font-size:4em;}
+.hata label{
+width:100%;
+margin-top:-15vh;
+text-align:center;
+}
+.card-img-top img{
+width:90%;
+height:30vh;
+}
