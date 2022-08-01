@@ -1,7 +1,7 @@
 {
   "name": "FileUpload",
   "version": "1.0.0",
-  "description": "Kawethra ve Medulla tarafından yapıldı",
+  "description": "Kawethra tarafından yapıldı",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
